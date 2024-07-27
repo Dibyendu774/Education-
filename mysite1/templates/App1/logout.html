@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>LogOut 😮</title>
+
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+</head>
+<body>
+        {% load static %}
+
+<div class="funds-success-message-container" style="margin-top: 300px;">
+  <div class="funds-checkmark-text-container">
+    <div class="funds-checkmark-container">
+      <svg class="funds-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="funds-checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="funds-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+
+     <div class="funds-display-on-ie">
+       <svg class="funds-ie-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="funds-ie-checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="funds-ie-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+      </div>
+    </div>
+
+    <h1 class="funds-success-done-text">Done!</h1>
+  </div>
+
+  <div class="funds-success-message">
+
+
+
+    <h2 style="margin-top: 20px;">Are You Sure To Logout </h2>
+      <br>
+      <hr>
+    <h2>We Are Miss You , you can return to Your Account at any time to update your choice As Soon As Possible.</h2>
+  </div>
+
+</div>
+
+        <form action="logout/" method="POST">
+
+<a class="modal-open" href="#modal" style="background-color: #00FFFF; color: #FF4500; height: 65px; width: 290px; margin-top: 30px; font-size: 20px;">Click Here To Log Out </a>
+
+<!--<a class="modal-open" href="#modal-tabbed">......</a>-->
+
+
+<div class="modal" id="modal">
+  <div class="modal-content" style="background-color: #DDA0DD;">
+    <a href="#" class="modal-close" title="Close">X</a>
+    <h3 style="font-size: 20px;">Confirmation</h3>
+    <div class="modal-area">
+      <p style="color: red; font-size: 25px;">You Have Successfully Logged Out 🙂</p>
+        <p style="color: red; font-size: 25px;"> Click The Home Button To Redirect To Home Page !! 😉</p>
+    </div>
+  <a href="/"> <button style="margin: 30px; margin-left: 183px; height: 40px; width: 130px; color: White; background-color: #036AB3; font-size: 21px;" type="button">Home</button> </a>
+  </div>
+
+</div>
+
+        </form>
+</body>
+</html>

@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<link rel="icon" href="{% static 'images/admin45.png' %}"/>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets1/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets1/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+   <center><marquee><h4 style="color: #FF00FF">ALL TIME REVENUE</h4></marquee></center>
+
+{% load static %}
+  <main id="main" class="main">
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card" style="width: 1250px; height: 500px; margin-top: 50px;">
+
+                <div class="filter">
+<!--                  <a class="icon" href="#" data-bs-toggle="dropdown"></a>-->
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body" >
+                  <h5 class="card-title">REVENUE <span>/All Time</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [
+                        {
+                          name: 'total Student',
+                          data: [{{user}}],
+                        },{
+                          name: 'Website Destine',
+                          data: [{{STD}}],
+                        }, {
+                          name: 'Application Developer',
+                          data: [{{sw}}],
+                        }, {
+                          name: 'Software Developer',
+                          data: [{{SDD}}],
+
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#a3a3a3','#4154f1', '#2eca6a', '#ff771d', '#00FFFF'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+
+                <!-- End Line Chart -->
+
+
+
+              </div>
+            </div><!-- End Reports -->
+
+
+
+
+
+
+
+<!--  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets1/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'assets1/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets1/vendor/chart.js/chart.umd.js' %}"></script>
+  <script src="{% static 'assets1/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'assets1/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'assets1/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'assets1/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'assets1/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets1/js/main.js' %}"></script>
+            </div>
+          </div></div></div></section></main>
+
+
+
+
+{%endblock%}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Now !! </title>
+	{% load static %}
+	<link rel = "shortcut icon" type = "image" href = "{% static 'images/trpp.png' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+        <style>
+            input:focus {
+            border-color: #ff0000;
+             box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            }
+            .formbg {
+            background-color: #66CDAA;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        #password-strength-meter {
+            margin-top: 5px;
+            height: 40px;
+            background-color: #ddd;
+            position: relative;
+        }
+        #password-strength-text {
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold; /*
+            text-transform: uppercase; /* Optionally make the text uppercase */
+        }
+        .very-weak {
+            background-color: red;
+            animation: pulse-red 0.5s infinite alternate;
+        }
+        .weak {
+            background-color: orange;
+            animation: pulse-orange 0.5s infinite alternate;
+        }
+        .medium {
+            background-color: black;
+            animation: pulse-black 0.5s infinite alternate;
+        }
+        .strong {
+            background-color: green;
+            animation: pulse-green 0.5s infinite alternate;
+        }
+        .very-strong {
+            background-color: green;
+            animation: pulse-green 0.5s infinite alternate;
+        }
+
+        @keyframes pulse-red {
+            0% { background-color: #ffcccc; }
+            100% { background-color: red; }
+        }
+        @keyframes pulse-orange {
+            0% { background-color: #ffe5cc; }
+            100% { background-color: orange; }
+        }
+        @keyframes pulse-black {
+            0% { background-color: #ffffcc; }
+            100% { background-color: black; }
+        }
+        @keyframes pulse-lightgreen {
+            0% { background-color: #ccffcc; }
+            100% { background-color: lightgreen; }
+        }
+        @keyframes pulse-green {
+            0% { background-color: #ccffcc; }
+            100% { background-color: green; }
+        }
+
+            .loader-container78 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+            .dot {
+                width: 15px;
+                height: 15px;
+                background-color: #3498db; /* Blue */
+                border-radius: 50%;
+                margin: 0 5px;
+                animation: bounce 0.5s infinite ease-in-out;
+            }
+
+              .dot:nth-child(1) {
+                  animation-delay: -0.32s;
+            }
+
+            .dot:nth-child(2) {
+                animation-delay: -0.16s;
+         }
+
+             @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+         }
+            50% {
+                transform: translateY(-15px);
+            }
+  }
+
+  #content {
+    display: none;
+  }
+        </style>
+
+</head>
+<body>
+
+     <div class="loader-container78" id="loader">
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="http://blog.stackfindover.com/" rel="dofollow" style="color: purple;">SingUp Now !!</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+
+              <span class="padding-bottom--15" >Sign in to your account</span>
+                 <form id="signupForm" action="register" method="POST">
+				  {% csrf_token %}
+
+                     <div class="field padding-bottom--24">
+                         <label >First Name</label>
+                            <input type="text" id="first" name="fn" minlength="3" maxlength="12" required>
+                         </div>
+				        <div class="field padding-bottom--24">
+                        <label >Last Name</label>
+                        <input type="text" id="last" name="ln" minlength="3" maxlength="12" required>
+                        </div>
+				         <div class="field padding-bottom--24">
+                        <label >User Name</label>
+                             <input type="text" id="Username1" name="Un" required >
+                        </div>
+                                 <h4 id="error-username" style="color: red;">{{ERROR}}</h4>
+
+                     <div class="field padding-bottom--24" style="box-shadow: brown;">
+                        <label>Phone NUmber</label>
+                             <input type="text" id="Username" name="phone_number45" required style="border: brown;">
+                        </div>
+                                <h4 id="error-phone" style="color: red;">{{Error3}}</h4>
+
+<!--                     <div class="field padding-bottom&#45;&#45;24">-->
+<!--                        <label for="phone_number">Phone Number:</label>-->
+<!--                         <input id="phone_number" type="text" name="phone_number" required>-->
+<!--                    </div>-->
+
+<!--                        <label for="methodOtpSms">SMS:</label>-->
+<!--                        <input type="radio" name="method_Otp" id="methodOtpSms" value="methodOtpSms" required>-->
+
+                     <div class="field padding-bottom--24 mt-4">
+                        <label >Email</label>
+                        <input type="email" id="email" name="Em" required>
+                     </div>
+                        <h4 id="error-email" style="color: red; margin-bottom: 15px;">{{ERROR2}}</h4>
+                        <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label >Password</label>
+                        </div>
+                        <input type="password" id="password" name="pw1" minlength="8" maxlength="40" required>
+                            <div id="preview-password" aria-disabled="true"></div>
+                            <div id="password-strength-meter">
+                                <div id="password-strength-text"></div>
+                            </div>
+                         </div>
+
+                        <h5 id="error-password" style="color: red;"> {{ERROR1}} </h5>
+
+				         <div class="field padding-bottom--24">
+                     <div class="grid--50-50">
+                    <label>Confirm Your Password</label>
+
+
+                        </div>
+                        <input type="password" name="pw2" minlength="8" maxlength="15" required>
+                        </div>
+<!--                     <div class="field field-checkbox padding-bottom&#45;&#45;24 flex-flex align-center">-->
+<!--                     <label>-->
+<!--                    <input type="checkbox" name="checkbox" required> Stay signed in for a week-->
+<!--                    </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6 mb-4">-->
+
+                  <h6 class="mb-2 pb-1" style="margin-left: 15px;">Category: </h6>
+
+                  <div class="form-check form-check-inline" style="">
+                    <input class="form-check-input" type="radio" name="Role1" id="femaleGender6"
+                      value="Student" checked required/>
+                    <label class="form-check-label">Student</label>
+                  </div>
+
+                  <div class="form-check form-check-inline" style="margin-left: 100px; ">
+                    <input class="form-check-input" type="radio" name="Role1" id="maleGender7"
+                      value="Faculty" required/>
+                    <label class="form-check-label">Faculty</label>
+                  </div>
+
+                    <div class="field field-checkbox padding-bottom--24 flex-flex align-center mt-4">
+                     <label>
+                    <input type="checkbox" name="checkbox" required> Stay signed in for a week
+                    </label>
+                    </div>
+
+                <div class="field padding-bottom--24 mt-4">
+                  <input type="submit" value="Continue">
+                </div>
+
+                <div class="field">
+                  <a class="ssolink" href="{% url 'social:begin' 'google-oauth2' %}">Use single sign-on (Google) instead</a>
+                </div>
+                      <div class="field">
+                  <a class="ssolink" href="{% url 'social:begin' 'facebook' %}">Use single sign-on (Facebook) instead</a>
+                </div>
+                     <div class="field">
+                  <a class="ssolink" href="{% url 'social:begin' 'github' %}">Use single sign-on (GitHub) instead</a>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+          <div class="footer-link padding-top--24">
+            <span>Don't have an account? <a href="/Login">Sign in</a></span>
+            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+              <span><a href="#">© Stack find over</a></span>
+              <span><a href="contactus">Contact</a></span>
+              <span><a href="#">Privacy & terms</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#Username1').on('input', function() {
+            $('#error-username').hide();
+        });
+
+        $('input[name="pw1"]').on('input', function() {
+            $('#error-password').hide();
+        });
+
+        $('input[name="Em"]').on('input', function() {
+            $('#error-email').hide();
+        });
+
+        $('input[name="phone_number45"]').on('input', function() {
+            $('#error-phone').hide();
+        });
+    });
+    $(document).ready(function() {
+        $('#password').on('input', function() {
+            var password = $(this).val();
+            var meter = $('#password-strength-meter');
+            var text = $('#password-strength-text');
+
+            // Check password strength
+            var strength = 0;
+            if (password.length >= 8) {
+                strength += 1;
+            }
+            if (password.match(/[a-z]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[A-Z]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[0-9]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[!@#$%^&*()]+/)) {
+                strength += 1;
+            }
+
+            if (password.length === 0) {
+                meter.removeClass().addClass('very-weak');
+                text.text('');
+            } else if (strength === 1) {
+                meter.removeClass().addClass('very-weak');
+                text.text('Very Weak');
+            } else if (strength === 2) {
+                meter.removeClass().addClass('weak');
+                text.text('Weak');
+            } else if (strength === 3) {
+                meter.removeClass().addClass('medium');
+                text.text('Medium');
+            } else if (strength === 4) {
+                meter.removeClass().addClass('strong');
+                text.text('Strong');
+            } else {
+                meter.removeClass().addClass('very-strong');
+                text.text('Very Strong');
+            }
+        });
+    });
+    $(document).ready(function() {
+        $('#preview-password').text('password Strength !!');
+
+        $('#password').on('input', function() {
+            var password = $(this).val();
+            var preview = $('#preview-password');
+
+            if (password.length >= 4) {
+                var previewText = 'Preview: ' + password.slice(-4);
+                preview.text(previewText);
+            } else {
+                preview.text('');
+            }
+        });
+    });
+
+    setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<form action="ad_alluser" method="POST" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/html">
+  {% csrf_token %}
+<center><h5> Add Product in Product Section</h5></center>
+  <hr style="color: red;">
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px;">
+    <label >Book Name</label>
+    <input type="text" class="form-control" name="Name" placeholder="Book Name" required style="height: 50px;">
+
+  </div>
+
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px;">
+    <label >New Price</label>
+    <input type="text" class="form-control" name="new" placeholder="New Price" required style="height: 50px;">
+
+  </div>
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Old Price</label>
+    <input type="text" class="form-control" name="old" id="exampleInputPassword1" placeholder="Old Price" required style="height: 50px;">
+  </div>
+
+  <div class="form-group mb-3 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Product Photo</label>
+    <input type="file" class="form-control" name="photo" placeholder="Product Image" required style="height: 50px;">
+  </div>
+
+   <div class="form-group mb-5 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Description</label>
+     <fieldset>
+    <input type="text" class="form-control" name="des" id="exampleInputPassword4" required style="height: 300px;">
+       </fieldset>
+  </div>
+
+  <div class="form-group form-check" style="margin-left: 330px;">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required >
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <center><button type="submit" value="submit" class="btn btn-primary" name="subvu" style="width: 100px;">Submit</button></center>
+</form>
+
+<hr style="color: blue; margin-top: 50px;">
+
+<div>
+
+  <h4 style="margin-left: 520px;">Home page Book Add</h4>
+
+
+  <form action="ad_alluser" method="POST" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/html" >
+  {% csrf_token %}
+
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px; margin-top: 100px;">
+    <label >Book Name</label>
+    <input type="text" class="form-control" name="Name" placeholder="Web Name" required style="height: 50px;  margin: 20px;">
+  </div>
+
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px;">
+    <label >New Price</label>
+    <input type="text" class="form-control" name="new" placeholder="New Price" required style="height: 50px;  margin: 20px;">
+
+  </div>
+  <div class="form-group  mb-3 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Down Heading</label>
+    <input type="text" class="form-control" name="old" id="exampleInputPassword12" placeholder="Down Heading" required style="height: 50px;  margin: 20px;">
+  </div>
+
+  <div class="form-group mb-3 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Home Product Photo</label>
+    <input type="file" class="form-control" name="photo" placeholder="Home Image" required style="height: 50px;  margin: 20px;">
+  </div>
+
+   <div class="form-group mb-5 w-50" style="margin-left: 330px;">
+    <label for="exampleInputPassword1">Down2_Heading</label>
+     <fieldset>
+    <input type="text" class="form-control" name="des" id="exampleInputPassword40" required style="height: 300px;  margin: 20px;">
+       </fieldset>
+  </div>
+
+  `<div class="form-group form-check" style="margin-left: 330px;  margin: 20px;">
+    <input type="checkbox" class="form-check-input" id="exampleCheck19" required >
+     <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <center><button type="submit" value="submit" class="btn btn-primary" name="subject2" style="width: 100px;">Submit</button></center>
+</form>
+
+</div>
+
+
+
+{% endblock %}

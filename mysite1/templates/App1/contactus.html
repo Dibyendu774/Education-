@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+    {% load static %}
+	<link rel="stylesheet" href=" {% static 'css/contact.css' %}">
+	<title>Contact us Page</title>
+	<link rel = "shortcut icon" type = "image" href = "{% static 'images/top.png' %}">
+</head>
+
+<body>
+{% load static %}
+	<!-- Header section -->
+	<header>
+		<button class="hamburger" id="hamburger-icon">
+			<span onclick="openNavbar()"> ☰</span>
+		</button>
+		<div class="logo"><img src="{% static 'images/loop12.png' %}"></div>
+		<nav id="nav-menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#">Enquiry</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+			</ul>
+		</nav>
+		<button class="reachUs-button">Call us</button>
+	</header>
+
+	<!-- banner section -->
+	<section class="banner">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20230822131732/images.png"
+			alt="Welcome to our Contact Us page">
+		<h1>Get in Touch With Us</h1>
+		<p>
+		We're here to answer any questions you may have.
+		</p>
+	</section>
+
+	<!-- Contact form -->
+
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+
+        <div class="form-content">
+            <Legend>Contact Us</Legend>
+
+
+            <input type="hidden" name="access_key" value="5216a24c-0880-4697-90c4-e3ef2757d004">
+
+            <input type="hidden" name="redirect" value="contact-thankyou-page">
+
+            <input type="hidden" name="subject" value="Hey Dibyendu New feedback for your website">
+
+            <div class="name">
+                <input type="text" name="Nm" placeholder="Your Name" required>
+            </div>
+
+            <div class="email">
+                <input type="email" name="Em" placeholder="your email" required >
+            </div>
+
+            <div class="msg">
+                <input type="text" name="Ms" placeholder="Your Message">
+            </div>
+
+			 <div class="msg">
+                <input type="text" name="Ph" placeholder="Your Phone Number">
+            </div>
+
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+
+
+	<!-- Company contact info -->
+<center>
+	<section class="contact-info">
+		<h2>Contact Information</h2>
+		<address>
+			Your Company Name<br>
+			123 Main Street<br>
+			City, State Zip Code<br>
+			Phone: <a href="tel:1234567890">123-456-7890</a><br>
+			Email: <a href="mailto:info@example.com">info@example.com</a>
+		</address>
+	</section>
+
+	<!-- Footer section -->
+	<footer>
+		<p>
+		© 2023 Your Company. All rights reserved.
+		</p>
+	</footer>
+	</center>
+	<script src="{% static 'java/main.js' %}"></script>
+
+</body>
+</html>

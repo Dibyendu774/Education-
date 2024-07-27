@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>NEW STUDENTS REGISTER FROM : </title>
+  <link rel = "shortcut icon" type = "image" href = "{% static 'images/tra.png' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+{% load static %}
+<style>
+{% load static %}
+  body{
+
+   background-image: url('{% static 'images/loop11.png' %}'); background-repeat: no-repeat; background-size: cover;
+  }
+
+
+</style>
+{% load static %}
+<body>
+{% load static %}
+      <section class="vh-100 gradient-custom " style="background-image: url('{% static 'images/loop8.png' %}') background-repeat: no-repeat; background-size: cover;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form action="student2" method="POST">
+            {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control-lg" name="fn" required/>
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-lg" name="ln" required/>
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+                </div>
+
+                 <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="Username" class="form-control form-control-lg" name="un" required/>
+                    <label class="form-label" for="lastName">User Name</label>
+                  </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div data-mdb-input-init class="form-outline datepicker w-100">
+                    <input type="date" class="form-control form-control-lg" id="birthdayDate" name="dob" required/>
+                    <label for="birthdayDate" class="form-label">Birthday</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="femaleGender"
+                      value="female" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="maleGender"
+                      value="Male" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="otherGender"
+                      value="Other" />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control-lg" name="Em" required/>
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="Ph"/>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4 pb-2">
+
+                <h6>Type:</h6>
+                  <select class="select form-control-lg" name="Dv">
+                    <option value="Software Developer">Software Developer</option>
+                    <option value="Application Developer">Application Developer</option>
+                    <option value="Website Design">Website Design</option>
+                  </select>
+
+              </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Category: </h6>
+
+                  <div class="form-check form-check-inline" style="margin-left: 50px;">
+                    <input class="form-check-input" type="radio" name="Role" id="femaleGender6"
+                      value="Student" checked />
+                    <label class="form-check-label" for="femaleGender" style="margin-left: 5px;">Student</label>
+                  </div>
+
+<!--                  <div class="form-check form-check-inline">-->
+<!--                    <input class="form-check-input" type="radio" name="Role" id="maleGender7"-->
+<!--                      value="Faculty" />-->
+<!--                    <label class="form-check-label" for="maleGender">Faculty</label>-->
+<!--                  </div>-->
+                </div>
+
+              <div class="mt-4 pt-2">
+                <button class="btn bsb-btn-xl btn-primary" type="submit" style="margin-left: 250px;">Submit</button>
+              </div>
+              </div>
+             </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Cookies Message Popup</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		#cookies-popup {
+			position: fixed;
+			bottom: 20px;
+			left: 20px;
+			width: 450px;
+			background: #333;
+			color: #fff;
+			padding: 40px;
+			text-align: center;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+			z-index: 1000;
+			border-radius: 8px;
+		}
+
+		.btn-cont {
+			display: flex;
+			margin: 20px 20px;
+		}
+
+		#cookies-popup p {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+
+		.btn-cont button {
+			background: #fff;
+			color: #333;
+			border: none;
+			width: 50%;
+			padding: 8px 20px;
+			cursor: pointer;
+			font-weight: bold;
+			margin: 5px;
+			border-radius: 4px;
+		}
+
+		.btn-cust {
+			padding: 15px 30px;
+			font-weight: bold;
+			color: #333;
+			border: none;
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: bold;
+			border-radius: 4px;
+		}
+
+		button:hover {
+			background-color: rgba(196, 218, 214, 0.76);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="cookies-popup">
+		<i class='fas fa-cookie-bite'
+		style='font-size:80px;'>
+		</i>
+		<p>
+			This website uses cookies to ensure you get
+			the best experience on our website.
+		</p>
+		<div class="btn-cont">
+			<button>Accept All Cookies</button>
+			<button>Necessary Cookies Only</button>
+		</div>
+		<button class="btn-cust">
+			Customize Settings
+		</button>
+	</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,216 @@
+{% extends 'base1.html' %}
+{% block body %}
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>NEW STUDENTS REGISTER FROM : </title>
+  <link rel = "shortcut icon" type = "image" href = "{% static 'images/trp.png' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+{% load static %}
+<style>
+{% load static %}
+  body{
+
+   background-image: url('{% static 'images/loop11.png' %}'); background-repeat: no-repeat; background-size: cover; width: 5000px;
+  }
+
+  .loader-container78 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: bounce 0.5s infinite ease-in-out;
+  }
+
+  .dot:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  #content {
+    display: none;
+  }
+
+</style>
+{% load static %}
+      <section class="vh-100 gradient-custom " style="background-image: url('{% static 'images/loop8.png' %}') background-repeat: no-repeat; background-size: cover;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Your Details</h3>
+            <form action="viewstd" method="POST">
+            {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control-lg" value="{{std6.fname}}" name="fn" disabled/>
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-lg" value="{{std6.lname}}" name="ln" disabled/>
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+                </div>
+
+                 <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="Username" class="form-control form-control-lg" value="{{std6.userno}}" name="un" disabled/>
+                    <label class="form-label" for="lastName">User Name</label>
+                  </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div data-mdb-input-init class="form-outline datepicker w-100">
+                    <input type="text" class="form-control form-control-lg" id="birthdayDate" value="{{std6.dob}}" name="dob" disabled/>
+                    <label for="birthdayDate" class="form-label">Birthday</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="femaleGender"
+                      value="female" disabled {% if std6.Gender == "Female" %} checked {% endif %} />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="maleGender"
+                      value="Male" disabled {% if std6.Gender == "Male" %} checked {% endif %}/>
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gen" id="otherGender"
+                      value="Other" disabled {% if std6.Gender == "Other" %} checked {% endif %}/>
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control-lg" value="{{std6.Email}}" name="Em" disabled/>
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="tel" id="phoneNumber" class="form-control form-control-lg" value="{{std6.Number}}" name="Ph" disabled/>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+
+                  <select class="select form-control-lg" name="Dv" disabled>
+                    <option value="{{std6.course}}" selected hidden="" > {{std6.course}}</option>
+                    <option value="Software Developer">Software Developer</option>
+                    <option value="Application Developer">Application Developer</option>
+                    <option value="Website Design">Website Design</option>
+                  </select>
+                  <label class="form-label select-label">Choose option</label>
+
+                </div>
+              </div>
+
+<!--              <div class="mt-4 pt-2">-->
+<!--                <h6>You Want To edit Your Details To Click Here</h6>-->
+<!--                <a href="editstd/"><button class="btn bsb-btn-xl btn-primary" type="submit">Edit</button></a>-->
+<!--              </div>-->
+              </div>
+             </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<div class="loader-container78" id="loaderContainer">
+  <div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('studentForm');
+    const loaderContainer = document.getElementById('loaderContainer');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the default form submission
+      const isValid = validateForm(); // Custom form validation function
+
+      if (isValid) {
+        loaderContainer.style.display = 'flex'; // Show the loader
+        // Simulate form submission
+        setTimeout(() => {
+          form.submit(); // Submit the form after showing loader
+        }, 2000); // Simulate network delay
+      }
+    });
+
+    function validateForm() {
+      // Implement your form validation logic here
+      // For this example, let's assume validation is always successful
+      return true;
+    }
+  });
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Reistration Form</title>
+    <link rel="stylesheet" href="{% static 'css/student_register_new.css' %}">
+</head>
+<body>
+    <center><h1 style="color: red; margin-top: 50px;">Register To Continue Your Student Page !!</h1></center>
+    <hr style="color: red;">
+    <form action="Student_login" method="POST">
+        {% csrf_token %}
+
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+
+                <label ><b>First Name</b></label>
+            <input type="text" name="First_Name" placeholder="Enter First Name" required>
+
+            <label ><b>Last Name</b></label>
+            <input type="text" name="Last_Name" placeholder="Enter Last Name" required>
+
+              <label ><b>Username</b></label>
+            <input type="text" name="User_Name" placeholder="Enter Username" required>
+
+             <label ><b>Phone Number</b></label>
+            <br>
+           <select name="Country_Code" required>
+            <option selected hidden value="">Code</option>
+            <option  value="98">+98</option>
+            <option  value="99">+99</option>
+            <option  value="90">+90</option>
+            <option  value="66">+66</option>
+            <option  value="91">+91</option>
+           </select>
+           <input type="phone" name="Student_Phone_Number" placeholder="812345678" required>
+
+          <label ><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="Email_id" required>
+
+            <h4 id="Error-Message" style="color: red;">{{Error}}</h4>
+
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="Password_id" required>
+
+
+          <label><b>Confirm Your Password</b></label>
+          <input type="password" placeholder="Confirm Your Password" name="Password_id1" required>
+
+
+
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+          <div class="clearfix">
+
+            <button type="submit" class="btn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+
+  <div class="youtubeBtn">
+  <a target="_blank" href="https://www.youtube.com/watch?v=7k8kKRQa9jY">
+      <span>Watch on YouTube</span>
+  <i class="fab fa-youtube"></i>
+    </a>
+
+</div>
+</body>
+</html>

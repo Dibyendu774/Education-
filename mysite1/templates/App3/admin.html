@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+{% load static %}
+
+    <style>
+        .loader-container78 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+            .dot {
+                width: 15px;
+                height: 15px;
+                background-color: #3498db; /* Blue */
+                border-radius: 50%;
+                margin: 0 5px;
+                animation: bounce 0.5s infinite ease-in-out;
+            }
+
+              .dot:nth-child(1) {
+                  animation-delay: -0.32s;
+            }
+
+            .dot:nth-child(2) {
+                animation-delay: -0.16s;
+         }
+
+             @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+         }
+            50% {
+                transform: translateY(-15px);
+            }
+  }
+
+  #content {
+    display: none;
+  }
+    </style>
+
+        <div class="loader-container78" id="loader">
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+<!--    <div class="loader-container" id="loader">-->
+<!--      <div class="loader">-->
+<!--        <div class="inner-circle"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="container-fluid py-4" id="dashboard">
+    <div class="row" style="display: flex; justify-content: space-between;">
+        <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Total User
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <h5 class="font-weight-bolder" style="margin-left: 100px;">{{Users1}}</h5>
+              </blockquote>
+            </div>
+        </div>
+        <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Software Developer
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <h5 class="font-weight-bolder" style="margin-left: 100px;">{{XYZ}}</h5>
+              </blockquote>
+            </div>
+        </div>
+        <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Application Developer
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <h5 class="font-weight-bolder" style="margin-left: 100px;">{{sv}}</h5>
+              </blockquote>
+            </div>
+        </div>
+         <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Website Design
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                  <h5 class="font-weight-bolder" style="margin-left: 100px;">{{ABC}}</h5>
+              </blockquote>
+            </div>
+    </div>
+    </div>
+
+
+
+<div class="row mt-4" style=" margin-left: 120px;">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+          <div class="card " style="background-image: url(' {% static 'images/moon.png' %}'); background-repeat: no-repeat; background-size: cover;">
+            <div class="card-header pb-0 p-3">
+               <h5 align="center" style="color: white;">PROGRAMMING</h5>
+            </div>
+              <div class="table-responsive">
+              <table  class="table table-dark table-hover" style="overflow: auto">
+                <tr>
+                  <th style="color:  red;">No.</th>
+                  <th style="color:  #33CCCC;">First Name</th>
+                  <th style="color:  #33CCCC;">Last Name</th>
+                  <th style="color:  #33CCCC;">Email id</th>
+                  <th style="color:  #33CCCC;">Number</th>
+                    <th style="color:  #33CCCC;">DOB</th>
+                    <th style="color:  #33CCCC;">Gender</th>
+                    <th style="color:  #33CCCC;">User No.</th>
+                    <th style="color:  #33CCCC;">Course Name</th>
+<!--                    <th style="text-align: center; color: #33CCCC" colspan="3">Action</th>-->
+                </tr>
+                {% for u in std %}
+                <tr>
+                  <td style="color: #FF0099;">{{u.sid}}</td>
+                  <td>{{u.fname}}</td>
+                  <td>{{u.lname}}</td>
+                  <td>{{u.Email}}</td>
+                  <td >{{u.Number}}</td>
+                    <td>{{u.dob}}</td>
+                    <td>{{u.Gender}}</td>
+                    <td>{{u.userno}}</td>
+                    <td>{{u.course}}</td>
+<!--                    <td><a href="editstd/{{u.sid}}"><i class="fa-solid fa-user-pen"></i></a> | <a href="delete_std/{{u.sid}}"><i class="fa-solid fa-trash"></i></a> | <a href="viewstd/{{u.sid}}"><i class="fa-solid fa-eye"></i></a></td>-->
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+
+<div class="container-fluid py-4" id="dashboards">
+    <div class="row ">
+        <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Total User
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <h5 class="font-weight-bolder" style="margin-left: 100px;">{{all}}</h5>
+              </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="row mt-4" style=" margin-left: 120px;">
+        <div class="col-lg-10 mb-lg-0 mb-4">
+          <div class="card " style="color: #7FFFD4;">
+            <div class="card-header pb-0 p-3">
+               <h5 align="center" style="color: black;">ALL USERS</h5>
+            </div>
+              <div class="table-responsive">
+              <table  class="table table-dark table-hover ">
+                <tr>
+                    <th style="color: red;">No.</th>
+                  <th style="color:  #33CCCC;">First Name</th>
+                  <th style="color:  #33CCCC;">Last Name</th>
+                  <th style="color:  #33CCCC;">user name</th>
+                  <th style="color:  #33CCCC;">Email</th>
+                  <th style="color:  #33CCCC;">Password</th>
+<!--                    <th>Action</th>-->
+                </tr>
+                {% for i in ann %}
+                <tr>
+                    <td style="color: red;">{{i.id}}</td>
+                  <td>{{i.fname}}</td>
+                  <td>{{i.lname}}</td>
+                  <td>{{i.uname}}</td>
+                  <td>{{i.email}}</td>
+                  <td>{{i.password}}</td>
+<!--                    <td><a href="Users/{{i.stud}}"><button class="btn btn-sm btn-danger">Delete</button></a></td>-->
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+ </div>
+
+<div class="container-fluid py-4" id="dashboard5">
+    <div class="row" style="display: flex; justify-content: space-between;">
+        <div class="card ms-4" style="width: 18rem;">
+            <div class="card-header">
+              Total User
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <h5 class="font-weight-bolder" style="margin-left: 100px;">{{FacultyAs}}</h5>
+              </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+</script>
+
+{% endblock %}

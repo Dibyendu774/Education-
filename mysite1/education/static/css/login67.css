@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 0.5;
+  max-width: 35rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+}
+
+h1 {
+  color: #03e9f4;
+  padding: 1rem 0 3rem 0;
+}
+
+form {
+  width: 100%;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 0.4rem 0.2rem;
+  font-size: inherit;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  font-family: inherit;
+}
+
+.input-box label {
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+  top: -20px;
+  color: #03e9f4;
+  font-size: 12px;
+  background-color: #243b55;
+  padding: 2px 5px;
+}
+
+.submit-button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0.6rem 1.2rem;
+  color: #03e9f4;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: none;
+  transition: 0.5s;
+  margin-top: 3rem;
+  letter-spacing: 2px;
+  background-color: rgb(45, 45, 45);
+}
+
+.submit-button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 25px #03e9f4;
+}
+
+.submit-button span {
+  position: absolute;
+  display: block;
+}
+
+.submit-button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.submit-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.submit-button span:nth-child(3) {
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  right: -100%;
+  background: linear-gradient(to left, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.submit-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

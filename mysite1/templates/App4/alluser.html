@@ -1,0 +1,91 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Student Section !!</title>-->
+<!--    {% load static %}-->
+<!--    <link rel = "shortcut icon" type = "image" href = "{% static 'images/top2.png' %}">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin> </script>-->
+<!--   <style>-->
+
+<!--</style>-->
+<!--</head>-->
+<!--{% load static %}-->
+<!--<body style="background-image: url(' {% static 'images/loop20.1.png' %}'); background-repeat: no-repeat; background-size: cover;">-->
+<!--          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand" href="#">All USER SECTION </a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link btn btn-primary" href="/register"> Register A New User..</a>-->
+<!--                </li>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--         <div class="collapse navbar-collapse" id="navbarSupportedContent1">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link btn btn-primary" href="/"> Home</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</nav>-->
+<!--<div class="container-fluid py-4" id="dashboard">-->
+<!--    <div class="row ">-->
+<!--        <div class="card ms-4" style="width: 18rem;">-->
+<!--            <div class="card-header">-->
+<!--              Total User-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--              <blockquote class="blockquote mb-0">-->
+<!--                <h5 class="font-weight-bolder">{{Userss}}</h5>-->
+<!--              </blockquote>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    <div class="row mt-4" style=" margin-left: 120px;">-->
+<!--        <div class="col-lg-10 mb-lg-0 mb-4">-->
+<!--          <div class="card " style="color: #7FFFD4;">-->
+<!--            <div class="card-header pb-0 p-3">-->
+<!--               <h5 align="center" style="color: black;">ALL USERS</h5>-->
+<!--            </div>-->
+<!--              <div class="table-responsive">-->
+<!--              <table  class="table table-dark table-hover ">-->
+<!--                <tr>-->
+<!--                    <th style="color: red;">No.</th>-->
+<!--                  <th style="color:  #33CCCC;">First Name</th>-->
+<!--                  <th style="color:  #33CCCC;">Last Name</th>-->
+<!--                  <th style="color:  #33CCCC;">user name</th>-->
+<!--                  <th style="color:  #33CCCC;">Email</th>-->
+<!--                  <th style="color:  #33CCCC;">Password</th>-->
+<!--&lt;!&ndash;                    <th>Action</th>&ndash;&gt;-->
+<!--                </tr>-->
+<!--                {% for i in stud %}-->
+<!--                <tr>-->
+<!--                    <td style="color: red;">{{i.id}}</td>-->
+<!--                  <td>{{i.fname}}</td>-->
+<!--                  <td>{{i.lname}}</td>-->
+<!--                  <td>{{i.uname}}</td>-->
+<!--                  <td>{{i.email}}</td>-->
+<!--                  <td>{{i.password}}</td>-->
+<!--&lt;!&ndash;                    <td><a href="Users/{{i.stud}}"><button class="btn btn-sm btn-danger">Delete</button></a></td>&ndash;&gt;-->
+<!--                </tr>-->
+<!--                {% endfor %}-->
+<!--              </table>-->
+<!--            </div>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

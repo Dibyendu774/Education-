@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    {% load static %}
+    <link rel = "shortcut icon" type = "image" href = "{% static 'images/icon89.png' %}">
+    <link rel="stylesheet" href="{% static 'css/pro.css' %}" >
+    <style>
+        .offline-message {
+            display: none; /* Hide by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 200px; /* Adjust as needed */
+            z-index: 1000;
+    </style>
+</head>
+<body style="color: black;" >
+{% load static %}
+
+  <header>
+      <nav>
+        <div class="logo">
+
+          <img src="{% static 'images/mm.png' %}" />
+        </div>
+        <div class="icon">
+          <span class="toggle">☰</span>
+        </div>
+        <ul class="list-item">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Category </a></li>
+          <li><a href="about">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+        {% load static %}
+    <div class="container mt-5">
+
+        <div class="row" style=" display: flex; ">
+
+            <!-- new card-->
+            {% for i in product %}
+
+              {% if forloop.counter0|divisibleby:5 and not forloop.first %}
+                </div><div class="row" style="display: flex; margin-top: 100px;">
+              {% endif %}
+
+          <div class="col-6">
+                <div class="card" style="width: 18rem;">
+
+    <!--                <div class="imgBx">-->
+                    <div class="imgBx">
+
+                    <img src="{{i.Photo.url}}">
+                </div>
+
+            <div class="contentBx">
+
+                <h2>{{i.Name}}</h2>
+
+
+
+                <div class="color">
+
+                    <h4 style="color: white;">Price</h4>
+                    <h2 style="margin-top: 50px;">₹ {{i.New_price}}</h2>
+                    <p style="color: red; margin-top: 50px"></p>
+            </div>
+                <a href="paypal/">Buy Now</a>
+                <a href="add/{{i.id}}" style="margin-left: 20px;">View</a>
+            </div>
+
+
+
+
+        </div>
+            </div>
+
+        {% endfor %}
+
+            <!--new card-->
+    </div>
+
+<!--  <h1>{{ product.Dec }}</h1>-->
+<!--    <p>New Price: {{ product.New_price }}</p>-->
+<!--    <p>Old Price: {{ product.Old_price }}</p>-->
+<!--    {% if product.Photo %}-->
+<!--        <img src="{{ product.Photo.url }}" alt="Product Photo">-->
+<!--    {% endif %}-->
+
+
+    </div>
+    <div class="offline-message" id="offlineMessage">
+    You Are Currently Offline !! Please Check Your Internet Connection !!
+    </div>
+
+    <script>
+         <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var offlineMessage = document.getElementById('offlineMessage');
+
+            function updateOnlineStatus() {
+                if (navigator.onLine) {
+                    document.body.style.opacity = '1'; // Show main content
+                    offlineMessage.style.display = 'none'; // Hide offline message
+                } else {
+                    document.body.style.opacity = '0.5'; // Reduce opacity of main content
+                    offlineMessage.style.display = 'block'; // Show offline message
+                }
+            }
+
+            updateOnlineStatus();
+
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+     <link rel = "shortcut icon" type = "image" href = "{% static 'images/tra.png' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/traning_tr.css' %}" >
+</head>
+
+<body>
+{% load static %}
+<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" aria-current="page" href="/">Home</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<main class="main-content position-relative border-radius-lg ">
+    <header>
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            </a>
+            <a href="alp" class="list-group-item list-group-item-action py-2 ripple {% if 'alp' in request.path %}active{% endif %}">
+              <i class="fas fa-chart-area fa-fw me-3"></i><span>Html Alphabets</span>
+
+            </a>
+            <a href="cat" class="list-group-item list-group-item-action py-2 ripple {% if 'cat' in request.path %}active{% endif %}">
+              <i class="fas fa-lock fa-fw me-3"></i><span>Category</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple {% if '#' in request.path %}active{% endif %}">
+              <i class="fas fa-chart-line fa-fw me-3"></i><span>Table</span></a>
+
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple {% if '#' in request.path %}active{% endif %}">
+              <i class="fas fa-chart-pie fa-fw me-3"></i><span>Report</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple {% if '#' in request.path %}active{% endif %}">
+              <i class="fas fa-chart-bar fa-fw me-3"></i><span>Forms</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+
+      <!-- Navbar -->
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+        <div class="image">
+                  <img style="height: 60px; width: 60px;" src="{% static 'images/tr.png' %}" alt="lab">
+        </div>
+          <!-- Right links -->
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item dropdown">
+              <form class="d-none d-md-flex input-group w-auto my-auto">
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary  " aria-current="page" href="/">Home</a>
+                </li>
+
+                <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+            </ul>
+</div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+    <main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+    </main>
+  <!--Main layout-->
+<!--  <div class="ratio ratio-16x9">-->
+<!--    <iframe src="dashboard.html" id="dashboard"></iframe>-->
+<!--    <iframe src="table.html" id="table"></iframe>-->
+<!--    <iframe src="form.html" id="form"></iframe>-->
+<!--    <iframe src="bill.html" id="bill"></iframe>-->
+<!--  </div>-->
+    {% block body %}{% endblock %}
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+navv
+{
+    font-weight:800;
+    background-color:rgb(0,200,200);
+    height:50px;
+}
+.navv ul
+{
+    display:flex;
+    justify-content:space-around;
+    list-style-type:none;
+}
+.navv ul li
+{
+    margin-top:15px;
+}
+.navv ul li a
+{
+    text-decoration:none;
+    color:black;
+}

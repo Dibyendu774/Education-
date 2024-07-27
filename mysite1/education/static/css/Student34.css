@@ -1,0 +1,57 @@
+/********** Notice Board, Recent Event CSS Starts **********/
+.note-event {
+     padding: 10px;
+     border: 1px solid #e3e3e3;
+     width: 48%;
+     margin: 1%;
+     float: left;
+}
+ .notice-board {
+     border: 5px solid #ffa38e;
+     padding: 30px;
+     color: white;
+     background-color: #2a692ac7;
+     width: 100%;
+     float: left;
+}
+ .notice-board ul {
+     list-style: none;
+     padding: 0px;
+     width: 100%;
+     float: left;
+}
+ .notice-board ul li {
+     font-size: 14px;
+     margin-bottom: 20px;
+     width: 100%;
+     float: left;
+}
+ .event-list {
+     padding: 10px;
+     width: 100%;
+     float: left;
+     border-bottom: 1px solid #e1e1e1;
+}
+ .event-date {
+     width: 80px;
+     float: left;
+     text-align: center;
+     background: #76c568;
+     color: #fff;
+     padding: 10px 10px;
+     border-radius: 5px;
+}
+ .event-date p {
+     font-weight: 400;
+}
+ .event-date h4 {
+     font-weight: 400;
+     font-size:28px;
+}
+ .event-content {
+     width: calc(100% - 110px);
+     float: left;
+     margin-left: 10px;
+     margin-top: 15px;
+}
+/********** Notice Board, Recent Event CSS Ends **********/
